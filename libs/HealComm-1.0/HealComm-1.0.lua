@@ -4,7 +4,7 @@ Revision: $Rev: 11670 $
 Author(s): aviana
 Website: https://github.com/Aviana
 Description: A library to provide communication of heals and resurrections.
-Dependencies: AceLibrary, AceEvent-2.0, RosterLib-2.0
+Dependencies: AceLibrary, AceEvent-2.0, RosterLib-2.0, ItemBonusLib-1.0
 ]]
 
 local MAJOR_VERSION = "HealComm-1.0"
@@ -15,8 +15,10 @@ if not AceLibrary:IsNewVersion(MAJOR_VERSION, MINOR_VERSION) then return end
 if not AceLibrary:HasInstance("RosterLib-2.0") then error(MAJOR_VERSION .. " requires RosterLib-2.0") end
 if not AceLibrary:HasInstance("AceEvent-2.0") then error(MAJOR_VERSION .. " requires AceEvent-2.0") end
 if not AceLibrary:HasInstance("AceHook-2.1") then error(MAJOR_VERSION .. " requires AceHook-2.1") end
+if not AceLibrary:HasInstance("ItemBonusLib-1.0") then error(MAJOR_VERSION .. " requires ItemBonusLib-1.0") end
 
 local roster = AceLibrary("RosterLib-2.0")
+local itemBonus = AceLibrary("ItemBonusLib-1.0")
 local HealComm = {}
 
 ------------------------------------------------
@@ -1188,10 +1190,7 @@ end
 
 function HealComm:SPELLCAST_START()
 	if ( self.SpellCastInfo and self.SpellCastInfo[1] == arg1 and self.Spells[arg1] ) then
-		local Bonus = 0
-		if BonusScanner then
-			Bonus = tonumber(BonusScanner:GetBonus("HEAL"))
-		end
+		local Bonus = itemBonus:GetBonus("HEAL")
 		local buffpower, buffmod = self:GetBuffSpellPower()
 		local targetpower, targetmod = self.SpellCastInfo[4], self.SpellCastInfo[5]
 		local Bonus = Bonus + buffpower
