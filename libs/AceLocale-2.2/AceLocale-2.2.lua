@@ -1,6 +1,6 @@
 --[[
 	Name: AceLocale-2.2
-	Revision: $Rev: 99999 $
+	Revision: $Rev: 15291 $
 	Developed by: The Ace Development Team (http://www.wowace.com/index.php/The_Ace_Development_Team)
 	Inspired By: Ace 1.x by Turan (turan@gryphon.com)
 	Website: http://www.wowace.com/
@@ -12,7 +12,7 @@
 ]]
 
 local MAJOR_VERSION = "AceLocale-2.2"
-local MINOR_VERSION = "$Revision: 99999 $"
+local MINOR_VERSION = "$Revision: 15291 $"
 
 if not AceLibrary then error(MAJOR_VERSION .. " requires AceLibrary.") end
 if not AceLibrary:IsNewVersion(MAJOR_VERSION, MINOR_VERSION) then return end

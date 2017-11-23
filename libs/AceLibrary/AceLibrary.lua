@@ -4,7 +4,7 @@
 	Developed by: The Ace Development Team (http://www.wowace.com/index.php/The_Ace_Development_Team)
 	Inspired By: Iriel (iriel@vigilance-committee.org)
 	Tekkub (tekkub@gmail.com)
-	Revision: $Rev: 99999 $
+	Revision: $Rev: 17638 $
 	Website: http://www.wowace.com/
 	Documentation: http://www.wowace.com/index.php/AceLibrary
 	SVN: http://svn.wowace.com/root/trunk/Ace2/AceLibrary
@@ -17,7 +17,7 @@
 ]]
 
 local ACELIBRARY_MAJOR = "AceLibrary"
-local ACELIBRARY_MINOR = "$Revision: 99999 $"
+local ACELIBRARY_MINOR = "$Revision: 17638 $"
 
 if loadstring("return function(...) return ... end") and AceLibrary and AceLibrary:HasInstance(ACELIBRARY_MAJOR) then return end -- lua51 check
 local table_setn
